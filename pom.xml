@@ -17,6 +17,8 @@
 	<modules>
 		<module>weblog_controller</module>
 		<module>weblog_common</module>
+		<module>weblog_dao</module>
+		<module>weblog_service</module>
 	</modules>
 
 	<packaging>pom</packaging>
