@@ -14,4 +14,21 @@
     <artifactId>weblog_service</artifactId>
 
 
+    <dependencies>
+
+        <dependency>
+            <groupId>com.weblog</groupId>
+            <artifactId>weblog_dao</artifactId>
+            <version>${dao.version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.weblog</groupId>
+            <artifactId>weblog_common</artifactId>
+            <version>${common.version}</version>
+        </dependency>
+
+    </dependencies>
+
 </project>
