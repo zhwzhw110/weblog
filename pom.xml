@@ -3,19 +3,52 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.3.RELEASE</version>
+		<relativePath/>
+	</parent>
+
 	<groupId>com.weblog</groupId>
 	<artifactId>weblog_parent</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+
 	<modules>
 		<module>weblog_controller</module>
+		<module>weblog_common</module>
 	</modules>
+
 	<packaging>pom</packaging>
 
 	<name>weblog_parent</name>
-	<description>Demo project for Spring Boot</description>
+	<description>this is parent project</description>
 
 	<dependencyManagement>
+		<dependencies>
+			<!--weblog_common-->
+			<dependency>
+				<groupId>com.weblog</groupId>
+				<artifactId>weblog_common</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
 
+			<!--weblog_controller-->
+			<dependency>
+				<groupId>com.weblog</groupId>
+				<artifactId>weblog_controller</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+
+			<!--junit-->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>3.8.1</version>
+				<scope>test</scope>
+			</dependency>
+
+		</dependencies>
 	</dependencyManagement>
 
 </project>
