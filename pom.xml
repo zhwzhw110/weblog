@@ -35,6 +35,14 @@
 		<!--其他jar包版本-->
 		<springboot.version>2.0.3.RELEASE</springboot.version>
 		<junit.version>3.8.1</junit.version>
+
+		<!--dao-->
+		<mybatis.version>1.3.2</mybatis.version>
+		<!--alibaba的druid数据库连接池-->
+		<druid.version>1.1.0</druid.version>
+		<!--分页插件-->
+		<pagehelper.version>1.1.2</pagehelper.version>
+
 	</properties>
 
 	<!--声明需要jar-->
@@ -71,6 +79,13 @@
 				<artifactId>junit</artifactId>
 				<version>${junit.version}</version>
 				<scope>test</scope>
+			</dependency>
+
+			<!-- 分页插件 -->
+			<dependency>
+				<groupId>com.github.pagehelper</groupId>
+				<artifactId>pagehelper-spring-boot-starter</artifactId>
+				<version>${pagehelper.version}</version>
 			</dependency>
 
 		</dependencies>
