@@ -42,6 +42,12 @@
             <version>${mybatis.version}</version>
         </dependency>
 
+        <!--通用Mapper-->
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper</artifactId>
+            <version>${tkmybatis.version}</version>
+        </dependency>
 
     </dependencies>
 

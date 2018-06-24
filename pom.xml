@@ -41,7 +41,9 @@
 		<!--alibaba的druid数据库连接池-->
 		<druid.version>1.1.0</druid.version>
 		<!--分页插件-->
-		<pagehelper.version>1.1.2</pagehelper.version>
+		<pagehelper.version>1.2.2</pagehelper.version>
+
+		<tkmybatis.version>4.0.3</tkmybatis.version>
 
 	</properties>
 
@@ -73,19 +75,14 @@
 				<version>${controller.version}</version>
 			</dependency>
 
+
+
 			<!--junit-->
 			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
 				<version>${junit.version}</version>
 				<scope>test</scope>
-			</dependency>
-
-			<!-- 分页插件 -->
-			<dependency>
-				<groupId>com.github.pagehelper</groupId>
-				<artifactId>pagehelper-spring-boot-starter</artifactId>
-				<version>${pagehelper.version}</version>
 			</dependency>
 
 		</dependencies>
