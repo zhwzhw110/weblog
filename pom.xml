@@ -3,12 +3,6 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.3.RELEASE</version>
-		<relativePath/>
-	</parent>
 
 	<groupId>com.weblog</groupId>
 	<artifactId>weblog_parent</artifactId>
@@ -27,6 +21,7 @@
 	<description>this is parent project</description>
 
 	<properties>
+		<!--jav编译版本-->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
@@ -38,13 +33,24 @@
 		<dao.version>0.0.1-SNAPSHOT</dao.version>
 
 		<!--其他jar包版本-->
+		<springboot.version>2.0.3.RELEASE</springboot.version>
 		<junit.version>3.8.1</junit.version>
-
 	</properties>
 
+	<!--声明需要jar-->
 	<dependencyManagement>
 
 		<dependencies>
+
+			<!--spring-boot-->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-parent</artifactId>
+				<version>${springboot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
 			<!--weblog_common-->
 			<dependency>
 				<groupId>com.weblog</groupId>

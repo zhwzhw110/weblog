@@ -8,10 +8,8 @@
         <artifactId>weblog_parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-
     <modelVersion>4.0.0</modelVersion>
     <packaging>jar</packaging>
-
     <artifactId>weblog_controller</artifactId>
 
     <dependencies>
@@ -32,7 +30,6 @@
             <artifactId>weblog_common</artifactId>
             <version>${common.version}</version>
         </dependency>
-
 
     </dependencies>
 
