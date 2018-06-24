@@ -9,7 +9,9 @@ spring:
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.jdbc.Driver
 mybatis:
+    #mapper.xml所在位置
     mapper-locations: classpath:mapping/*.xml
+    #实体类所做包
     type-aliases-package: com.weblog.model
 pagehelper:
     helperDialect: mysql
