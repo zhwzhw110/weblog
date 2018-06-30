@@ -7,6 +7,7 @@
         <groupId>com.weblog</groupId>
         <artifactId>weblog_parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <packaging>jar</packaging>
@@ -15,8 +16,9 @@
     <dependencies>
 
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>com.weblog</groupId>
+            <artifactId>weblog_common</artifactId>
+            <version>${common.version}</version>
         </dependency>
 
         <dependency>
@@ -25,21 +27,7 @@
             <version>${service.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.weblog</groupId>
-            <artifactId>weblog_common</artifactId>
-            <version>${common.version}</version>
-        </dependency>
-
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>

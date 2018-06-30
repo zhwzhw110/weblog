@@ -3,10 +3,16 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.3.RELEASE</version>
+	</parent>
 
 	<groupId>com.weblog</groupId>
 	<artifactId>weblog_parent</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+
 
 	<modules>
 		<module>weblog_controller</module>
@@ -52,20 +58,11 @@
 
 		<dependencies>
 
-			<!--spring-boot-->
+			<!-- 分页插件 -->
 			<dependency>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-starter-parent</artifactId>
-				<version>${springboot.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-
-			<!--weblog_common-->
-			<dependency>
-				<groupId>com.weblog</groupId>
-				<artifactId>weblog_common</artifactId>
-				<version>${common.version}</version>
+				<groupId>com.github.pagehelper</groupId>
+				<artifactId>pagehelper-spring-boot-starter</artifactId>
+				<version>${pagehelper.version}</version>
 			</dependency>
 
 			<!--weblog_controller-->
@@ -73,6 +70,20 @@
 				<groupId>com.weblog</groupId>
 				<artifactId>weblog_controller</artifactId>
 				<version>${controller.version}</version>
+			</dependency>
+
+			<!--weblog_service-->
+			<dependency>
+				<groupId>com.weblog</groupId>
+				<artifactId>weblog_service</artifactId>
+				<version>${service.version}</version>
+			</dependency>
+
+			<!--weblog_dao-->
+			<dependency>
+				<groupId>com.weblog</groupId>
+				<artifactId>weblog_dao</artifactId>
+				<version>${dao.version}</version>
 			</dependency>
 
 			<!--junit-->
@@ -86,5 +97,29 @@
 		</dependencies>
 
 	</dependencyManagement>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- 分页插件 -->
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper-spring-boot-starter</artifactId>
+			<version>${pagehelper.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+
 
 </project>

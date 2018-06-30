@@ -1,6 +1,7 @@
-package com.weblog.user;
+package com.service.user;
 
-import com.weblog.model.User;
+
+import com.domain.model.User;
 
 public interface UserService{
 
