@@ -8,11 +8,14 @@ spring:
         platform: mysql
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.jdbc.Driver
+    jackson:                                                  #rest 返回时间设置格式
+      date-format: yyyy-MM-dd                                 #时间格式
+      time-zone: GMT+8                                        #时区别
+      serialization:
+        write-dates-as-timestamps: false                      #是否使用时间戳作为格式
 mybatis:
-    #mapper.xml所在位置
-    mapper-locations: classpath:mapper/*Mapper.xml
-    #实体类所做包
-    type-aliases-package: com.domain.model
+    mapper-locations: classpath:mapper/*Mapper.xml            #mapper.xml所在位置
+    type-aliases-package: com.domain.model                    #实体类所做包
 pagehelper:
     helperDialect: mysql
     reasonable: true
