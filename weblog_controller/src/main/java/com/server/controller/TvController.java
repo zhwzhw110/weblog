@@ -31,7 +31,6 @@ public class TvController {
         list.add(tvShows1);
         list.add(tvShows2);
         list.add(tvShows3);
-
         return list;
     }
 
