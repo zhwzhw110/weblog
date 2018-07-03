@@ -3,12 +3,14 @@ package com.server.controller;
 import com.domain.model.TvShows;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.tomcat.util.http.fileupload.IOUtils;
+import org.apache.commons.io.IOUtils;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.util.*;
 
 @RestController
@@ -51,8 +53,26 @@ public class TvController {
             log.trace("文件上传");
         }
         //文件上传
-        FileOutputStream fileOutputStream = new FileOutputStream("target/"+multipartfile.getOriginalFilename());
+        FileOutputStream fileOutputStream = new FileOutputStream("target/"+multipartfile.getOriginalFilename());//获取文件的原始名字
         IOUtils.copy(multipartfile.getInputStream(),fileOutputStream);
         fileOutputStream.close();
     }
+
+    /**
+    *@author: zhanghHaiWen
+    *@Desc: 获取某张照片的信息 返回.jpg文件格式的文件
+    *@params:  * @param null
+    *@Date: 2018/7/3 0003 下午 2:55
+    */
+    @GetMapping(value = "/photo/get/{id}" ,produces = MediaType.IMAGE_JPEG_VALUE)
+    public byte[] getPhoto(@PathVariable(value = "id") int id) throws Exception{
+        if(log.isTraceEnabled()){
+            log.trace("获取文件");
+        }
+        String iconPath = "/";
+        InputStream inputStream = new FileInputStream(iconPath);
+        inputStream.
+        return IOUtils
+    }
+
 }
