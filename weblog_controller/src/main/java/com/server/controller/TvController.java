@@ -69,7 +69,7 @@ public class TvController {
         if(log.isTraceEnabled()){
             log.trace("获取文件");
         }
-        String iconPath = "/";
+        String iconPath = "/filepath/filename";
         InputStream inputStream = new FileInputStream(iconPath);
         return IOUtils.toByteArray(inputStream);
     }
