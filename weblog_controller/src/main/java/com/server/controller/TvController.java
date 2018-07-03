@@ -71,8 +71,7 @@ public class TvController {
         }
         String iconPath = "/";
         InputStream inputStream = new FileInputStream(iconPath);
-        inputStream.
-        return IOUtils
+        return IOUtils.toByteArray(inputStream);
     }
 
 }
