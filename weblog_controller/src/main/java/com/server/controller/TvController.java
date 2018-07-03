@@ -1,15 +1,20 @@
 package com.server.controller;
 
 import com.domain.model.TvShows;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.tomcat.util.http.fileupload.IOUtils;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.FileOutputStream;
 import java.util.*;
 
 @RestController
 @RequestMapping(value = "/TV")
 public class TvController {
+    private  static  final Log log = LogFactory.getLog(TvController.class);
 
     @GetMapping(value = "/sayHello")
     public Map<String,Object> sayHello(){
@@ -34,4 +39,20 @@ public class TvController {
         return list;
     }
 
+    /**
+    *@author: zhanghHaiWen
+    *@Desc: 文件上传接口
+    *@params:  * @param id 文件上传必填参数
+    *@Date: 2018/7/3 0003 下午 2:17
+    */
+    @PostMapping(value = "/photos/{id}",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public void addPhoto(@PathVariable(value = "id") int id,@RequestParam(value = "photo") MultipartFile multipartfile) throws Exception{
+        if(log.isTraceEnabled()){
+            log.trace("文件上传");
+        }
+        //文件上传
+        FileOutputStream fileOutputStream = new FileOutputStream("target/"+multipartfile.getOriginalFilename());
+        IOUtils.copy(multipartfile.getInputStream(),fileOutputStream);
+        fileOutputStream.close();
+    }
 }
