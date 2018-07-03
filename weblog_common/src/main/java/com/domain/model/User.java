@@ -1,5 +1,8 @@
 package com.domain.model;
 
+import javax.validation.constraints.AssertTrue;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Null;
 import java.io.Serializable;
 
 public class User implements Serializable {
@@ -11,8 +14,9 @@ public class User implements Serializable {
         this.id = id;
         this.username = username;
     }
+    @Null
     private Integer id;
-
+    @NotEmpty
     private  String username;
 
     public Integer getId() {
@@ -30,4 +34,15 @@ public class User implements Serializable {
     public void setUsername(String username) {
         this.username = username;
     }
+
+    @AssertTrue
+    public boolean isVaild(){
+        //在这儿添加校验
+        //例如校验 姓名是否为zhw
+        if(!"zhw".equals(getUsername())){
+            return false;
+        }
+        return true;
+    }
+
 }
