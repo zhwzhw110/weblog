@@ -1,9 +1,8 @@
 package com.server.controller;
 
-import com.domain.model.TvShows;
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.commons.io.IOUtils;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -11,7 +10,9 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
-import java.util.*;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping(value = "/TV")
@@ -27,7 +28,7 @@ public class TvController {
         return map;
     }
 
-    @GetMapping(value = "/tvshows")
+    /*@GetMapping(value = "/tvshows")
     public List<TvShows> getTvshows(){
         List<TvShows> list = new ArrayList<TvShows>();
 
@@ -39,7 +40,7 @@ public class TvController {
         list.add(tvShows2);
         list.add(tvShows3);
         return list;
-    }
+    }*/
 
     /**
     *@author: zhanghHaiWen

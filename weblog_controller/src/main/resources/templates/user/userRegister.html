@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>小小海盗博客</title>
+    <!--用户注册-->
+</head>
+<body>
+    <h1>用户注册页面</h1>
+
+    <form th:action="@{/user/userRegister}" th:method="post">
+
+        <table>
+            <tr>
+                <td>用户名</td>
+                <td><input type="text" name="userName"></td>
+            </tr>
+            <tr>
+                <td>密码</td>
+                <td><input type="text" name="userPwd"></td>
+            </tr>
+            <tr>
+                <td>确认密码</td>
+                <td><input type="text" name="userPwdConfirm"></td>
+            </tr>
+            <tr>
+                <td>手机号码</td>
+                <td><input type="tel" name="userPhone"></td>
+            </tr>
+            <tr>
+                <td>用户性别</td>
+                <td>
+                    <input name="userSex" type="radio" value="1" checked>男
+                    <input name="userSex" type="radio" value="0">女
+                </td>
+            </tr>
+            <tr>
+                <td>QQ</td>
+                <td><input name="userQq" type="text"></td>
+            </tr>
+            <tr>
+                <td>QQ</td>
+                <td><input name="userAddress" type="text"></td>
+            </tr>
+            <tr>
+                <td>生日</td>
+                <td><input name="userbirthday" type="date"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="提交"></td>
+            </tr>
+        </table>
+
+    </form>
+</body>
+</html>

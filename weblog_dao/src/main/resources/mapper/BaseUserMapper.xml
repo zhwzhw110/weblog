@@ -2,13 +2,22 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.weblog.mapper.BaseUserMapper">
     <resultMap id="BaseResultMap" type="com.domain.model.User" >
-        <id column="id" property="id" jdbcType="INTEGER" />
-        <result column="user_name" property="username" jdbcType="VARCHAR" />
 
     </resultMap>
 
     <select id="getUserById" resultMap="BaseResultMap" parameterType="integer">
         SELECT * FROM USER WHERE id = #{userId}
     </select>
+
+    <insert id="insterUser" parameterType="com.domain.model.User">
+        INSERT INTO USER
+        (user.user_id,user.group_id,user.user_name,user.user_pwd,user.user_salt,user.user_phone,user.user_sex,user.user_qq,user.user_email,user.user_address,user.user_mark,
+         user.user_rank_id,user.user_last_login_ip,user.user_birthday,user.user_description,user.user_image_url,user.user_school,user.user_register_time,
+         user.user_register_ip,user.user_last_update_time,user.user_weibo,user.user_blood_type,user.user_says,user.user_lock,user.user_freeze,
+         user.user_power
+        )
+        VALUES (NULL,groupId,userName,userPwd,userSalt,userPhone,userSex,userQq,userEmail,userAddress,userMark,userRankId,userLastLoginIp,userbirthday,userDescription,userImageUrl,
+	    userSchool,NOW(),userRegisterIp,NOW(),userWeibo,userBloodType,userSays,0,0,userPower)
+    </insert>
 
 </mapper>

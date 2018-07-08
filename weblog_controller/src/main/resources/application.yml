@@ -12,7 +12,12 @@ spring:
       date-format: yyyy-MM-dd                                    #时间格式
       time-zone: GMT+8                                           #时区别
       serialization:
-        write-dates-as-timestamps: false                       #是否使用时间戳作为格式
+        write-dates-as-timestamps: false                         #是否使用时间戳作为格式
+    thymeleaf:
+      cache: false                                                #模版在开发时候不使用缓存
+      prefix: classpath:/templates/                               #前缀
+      suffix: .html                                               #后缀
+
 mybatis:
     mapper-locations: classpath:mapper/*Mapper.xml              #mapper.xml所在位置
     type-aliases-package: com.domain.model                      #实体类所做包
@@ -25,6 +30,5 @@ pagehelper:
 logging:                                                          #日志设置
     file: target/app.log                                          #日志记录位置
     level:
-      ROOT: WARN                                                  #日志配置级别
-      controller: TRANCE                                         #日志启动的
-
+      ROOT: info                                                  #日志配置级别
+      controller: info                                            #日志启动的
