@@ -39,7 +39,6 @@ public class UserServiceImpl implements UserService {
             user.setUserPwd(userPwd);
             user.setUserSalt(salt);
             result=baseUserMapper.insterUser(user);
-
         }
         return result;
     }
